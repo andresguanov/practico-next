@@ -1,43 +1,43 @@
-import { useState } from "react";
+import { useState } from "react"
 
-const initialState = {
+const initialState:GlobalState = {
   cart: [],
   orderIsOpen: false,
   menuIsOpen: false,
-};
+}
 
-const useInitialState = () => {
-  const [state, setState] = useState(initialState);
+const useInitialState = (): AppContextInterface => {
+  const [state, setState] = useState<GlobalState>(initialState)
 
-  const addToCart = (payload) => {
+  const addToCart = (payload : Product): void => {
     setState({
       ...state,
       cart: state.cart.includes(payload)
         ? state.cart
         : [...state.cart, payload],
-    });
-  };
+    })
+  }
 
-  const removeFromCart = (payload) => {
+  const removeFromCart = (payload: Product):void => {
     setState({
       ...state,
       cart: state.cart.filter((items) => items.id !== payload.id),
-    });
-  };
+    })
+  }
 
-  const toggleOrder = () => {
+  const toggleOrder = ():void => {
     setState({
       ...state,
       orderIsOpen: !state.orderIsOpen,
-    });
-  };
+    })
+  }
 
-  const toggleMenu = () => {
+  const toggleMenu = ():void => {
     setState({
       ...state,
       menuIsOpen: !state.menuIsOpen,
-    });
-  };
+    })
+  }
 
   return {
     state,
@@ -45,7 +45,7 @@ const useInitialState = () => {
     removeFromCart,
     toggleOrder,
     toggleMenu,
-  };
-};
+  }
+}
 
-export default useInitialState;
+export default useInitialState

@@ -17,9 +17,14 @@
       "@styles/*": [
         "styles/*"
       ],
-      "@templates/*": [
-        "templates/*"
-      ]
+      "@icons/*": [
+        "public/icons/*"
+      ],
+      "@logos/*": [
+        "public/logos/*"
+      ],
+
+
     },
     "target": "es5",
     "lib": [

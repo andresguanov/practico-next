@@ -1,10 +1,8 @@
+import ProductList from '@containers/ProductList'
 import type { NextPage } from 'next'
-import Home from '@templates/Home'
 
 const Home: NextPage = () => {
-  return (
-    <Home />
-  )
+  return <ProductList />
 }
 
 export default Home
